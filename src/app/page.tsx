@@ -334,10 +334,219 @@ export default function Home() {
               <button className="w-full bg-primary text-on-primary py-3 rounded-full font-bold hover:opacity-90 transition-all shadow-md">Jetzt starten</button>
             </div>
           </div>
-          {/* Vergleich mit Wettbewerbern */}
-          <div className="text-center mt-12">
-            <p className="text-secondary text-sm">
-              Ab 10.000 € Monatsumsatz günstiger als SumUp &amp; Zettle. <a href="#" className="text-primary font-semibold hover:underline">Kostenvergleich ansehen →</a>
+          {/* Wettbewerber-Vergleichstabelle */}
+          <div className="mt-20">
+            <div className="text-center mb-10">
+              <h3 className="text-2xl md:text-3xl font-bold font-headline tracking-tight mb-3">Zipayo vs. Wettbewerb</h3>
+              <p className="text-secondary">Alle Kosten auf einen Blick — transparent vergleichen</p>
+            </div>
+            
+            {/* Desktop Table */}
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr>
+                    <th className="text-left p-4 bg-surface-container-low rounded-tl-xl font-semibold text-secondary"></th>
+                    <th className="p-4 bg-primary/10 border-2 border-primary/20 font-bold text-primary">
+                      <div className="flex flex-col items-center">
+                        <span className="text-xs uppercase tracking-wider text-primary/70 mb-1">Zipayo</span>
+                        <span>QR Basic</span>
+                      </div>
+                    </th>
+                    <th className="p-4 bg-primary/20 border-2 border-primary/30 font-bold text-primary relative">
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-2 py-0.5 rounded text-[10px] font-bold uppercase">Empfohlen</div>
+                      <div className="flex flex-col items-center">
+                        <span className="text-xs uppercase tracking-wider text-primary/70 mb-1">Zipayo</span>
+                        <span>Terminal Pro</span>
+                      </div>
+                    </th>
+                    <th className="p-4 bg-surface-container-low font-semibold text-secondary">SumUp</th>
+                    <th className="p-4 bg-surface-container-low rounded-tr-xl font-semibold text-secondary">Nexi bestpay</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* Monatlich */}
+                  <tr className="border-b border-outline-variant/10">
+                    <td className="p-4 font-semibold bg-surface-container-lowest">Monatliche Gebühr</td>
+                    <td className="p-4 text-center bg-primary/5 border-x-2 border-primary/20 font-bold text-primary">19 €</td>
+                    <td className="p-4 text-center bg-primary/10 border-x-2 border-primary/30 font-bold text-primary">39 €</td>
+                    <td className="p-4 text-center bg-surface-container-lowest">0 €</td>
+                    <td className="p-4 text-center bg-surface-container-lowest">14,90 €</td>
+                  </tr>
+                  {/* % Debit */}
+                  <tr className="border-b border-outline-variant/10">
+                    <td className="p-4 font-semibold bg-surface-container-lowest">Gebühr pro Zahlung</td>
+                    <td className="p-4 text-center bg-primary/5 border-x-2 border-primary/20 font-bold text-primary">1,5 %</td>
+                    <td className="p-4 text-center bg-primary/10 border-x-2 border-primary/30 font-bold text-primary">1,65 %</td>
+                    <td className="p-4 text-center bg-surface-container-lowest">1,69 %</td>
+                    <td className="p-4 text-center bg-surface-container-lowest">0,99 %</td>
+                  </tr>
+                  {/* Hardware */}
+                  <tr className="border-b border-outline-variant/10">
+                    <td className="p-4 font-semibold bg-surface-container-lowest">Hardware-Kosten</td>
+                    <td className="p-4 text-center bg-primary/5 border-x-2 border-primary/20">
+                      <span className="inline-flex items-center gap-1 text-primary font-semibold">
+                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                        Keine
+                      </span>
+                    </td>
+                    <td className="p-4 text-center bg-primary/10 border-x-2 border-primary/30">
+                      <span className="inline-flex items-center gap-1 text-primary font-semibold">
+                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                        Inklusive
+                      </span>
+                    </td>
+                    <td className="p-4 text-center bg-surface-container-lowest text-secondary">ab 39 € einmalig</td>
+                    <td className="p-4 text-center bg-surface-container-lowest text-secondary">ab 69 € einmalig</td>
+                  </tr>
+                  {/* Vertragsbindung */}
+                  <tr className="border-b border-outline-variant/10">
+                    <td className="p-4 font-semibold bg-surface-container-lowest">Vertragsbindung</td>
+                    <td className="p-4 text-center bg-primary/5 border-x-2 border-primary/20">
+                      <span className="inline-flex items-center gap-1 text-primary font-semibold">
+                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                        Keine
+                      </span>
+                    </td>
+                    <td className="p-4 text-center bg-primary/10 border-x-2 border-primary/30">
+                      <span className="inline-flex items-center gap-1 text-primary font-semibold">
+                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                        Keine
+                      </span>
+                    </td>
+                    <td className="p-4 text-center bg-surface-container-lowest">
+                      <span className="inline-flex items-center gap-1 text-primary font-semibold">
+                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                        Keine
+                      </span>
+                    </td>
+                    <td className="p-4 text-center bg-surface-container-lowest text-secondary">12 Monate</td>
+                  </tr>
+                  {/* Feldhub-Integration */}
+                  <tr className="border-b border-outline-variant/10">
+                    <td className="p-4 font-semibold bg-surface-container-lowest">Feldhub-Integration</td>
+                    <td className="p-4 text-center bg-primary/5 border-x-2 border-primary/20">
+                      <span className="inline-flex items-center gap-1 text-primary font-semibold">
+                        <span className="material-symbols-outlined text-lg" style={{fontVariationSettings: "'FILL' 1"}}>check_circle</span>
+                        Native
+                      </span>
+                    </td>
+                    <td className="p-4 text-center bg-primary/10 border-x-2 border-primary/30">
+                      <span className="inline-flex items-center gap-1 text-primary font-semibold">
+                        <span className="material-symbols-outlined text-lg" style={{fontVariationSettings: "'FILL' 1"}}>check_circle</span>
+                        Native
+                      </span>
+                    </td>
+                    <td className="p-4 text-center bg-surface-container-lowest">
+                      <span className="inline-flex items-center gap-1 text-outline-variant">
+                        <span className="material-symbols-outlined text-lg">remove_circle_outline</span>
+                        Nein
+                      </span>
+                    </td>
+                    <td className="p-4 text-center bg-surface-container-lowest">
+                      <span className="inline-flex items-center gap-1 text-outline-variant">
+                        <span className="material-symbols-outlined text-lg">remove_circle_outline</span>
+                        Nein
+                      </span>
+                    </td>
+                  </tr>
+                  {/* Delayed Capture */}
+                  <tr>
+                    <td className="p-4 font-semibold bg-surface-container-lowest rounded-bl-xl">Delayed Capture</td>
+                    <td className="p-4 text-center bg-primary/5 border-x-2 border-b-2 border-primary/20">
+                      <span className="inline-flex items-center gap-1 text-outline-variant">
+                        <span className="material-symbols-outlined text-lg">remove_circle_outline</span>
+                        Nein
+                      </span>
+                    </td>
+                    <td className="p-4 text-center bg-primary/10 border-x-2 border-b-2 border-primary/30">
+                      <span className="inline-flex items-center gap-1 text-primary font-semibold">
+                        <span className="material-symbols-outlined text-lg" style={{fontVariationSettings: "'FILL' 1"}}>check_circle</span>
+                        Ja
+                      </span>
+                    </td>
+                    <td className="p-4 text-center bg-surface-container-lowest">
+                      <span className="inline-flex items-center gap-1 text-outline-variant">
+                        <span className="material-symbols-outlined text-lg">remove_circle_outline</span>
+                        Nein
+                      </span>
+                    </td>
+                    <td className="p-4 text-center bg-surface-container-lowest rounded-br-xl">
+                      <span className="inline-flex items-center gap-1 text-outline-variant">
+                        <span className="material-symbols-outlined text-lg">remove_circle_outline</span>
+                        Nein
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="md:hidden space-y-4">
+              {/* Mobile: Zipayo QR Basic */}
+              <div className="bg-primary/10 border-2 border-primary/30 rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="bg-primary text-on-primary px-2 py-0.5 rounded text-xs font-bold uppercase">Zipayo</span>
+                  <span className="font-bold text-lg">QR Basic</span>
+                </div>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between"><span className="text-secondary">Monatlich</span><span className="font-bold text-primary">19 €</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Gebühr/Zahlung</span><span className="font-bold text-primary">1,5 %</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Hardware</span><span className="text-primary font-semibold">✓ Keine</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Vertragsbindung</span><span className="text-primary font-semibold">✓ Keine</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Feldhub</span><span className="text-primary font-semibold">✓ Native</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Delayed Capture</span><span className="text-outline-variant">—</span></div>
+                </div>
+              </div>
+
+              {/* Mobile: Zipayo Terminal Pro */}
+              <div className="bg-primary/20 border-2 border-primary rounded-2xl p-6 relative">
+                <div className="absolute -top-2 left-4 bg-primary text-on-primary px-2 py-0.5 rounded text-xs font-bold uppercase">Empfohlen</div>
+                <div className="flex items-center gap-2 mb-4 mt-1">
+                  <span className="bg-primary text-on-primary px-2 py-0.5 rounded text-xs font-bold uppercase">Zipayo</span>
+                  <span className="font-bold text-lg">Terminal Pro</span>
+                </div>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between"><span className="text-secondary">Monatlich</span><span className="font-bold text-primary">39 €</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Gebühr/Zahlung</span><span className="font-bold text-primary">1,65 %</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Hardware</span><span className="text-primary font-semibold">✓ Inklusive</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Vertragsbindung</span><span className="text-primary font-semibold">✓ Keine</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Feldhub</span><span className="text-primary font-semibold">✓ Native</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Delayed Capture</span><span className="text-primary font-semibold">✓ Ja</span></div>
+                </div>
+              </div>
+
+              {/* Mobile: SumUp */}
+              <div className="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-6">
+                <span className="font-bold text-lg mb-4 block text-secondary">SumUp</span>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between"><span className="text-secondary">Monatlich</span><span>0 €</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Gebühr/Zahlung</span><span>1,69 %</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Hardware</span><span className="text-secondary">ab 39 €</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Vertragsbindung</span><span className="text-primary font-semibold">✓ Keine</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Feldhub</span><span className="text-outline-variant">—</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Delayed Capture</span><span className="text-outline-variant">—</span></div>
+                </div>
+              </div>
+
+              {/* Mobile: Nexi bestpay */}
+              <div className="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-6">
+                <span className="font-bold text-lg mb-4 block text-secondary">Nexi bestpay</span>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between"><span className="text-secondary">Monatlich</span><span>14,90 €</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Gebühr/Zahlung</span><span>0,99 %</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Hardware</span><span className="text-secondary">ab 69 €</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Vertragsbindung</span><span className="text-secondary">12 Monate</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Feldhub</span><span className="text-outline-variant">—</span></div>
+                  <div className="flex justify-between"><span className="text-secondary">Delayed Capture</span><span className="text-outline-variant">—</span></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Info Text */}
+            <p className="text-center text-secondary text-xs mt-8">
+              * Stand April 2026. Preise können variieren. Zipayo-Preise inkl. MwSt.
             </p>
           </div>
         </div>
