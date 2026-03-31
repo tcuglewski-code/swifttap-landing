@@ -1,6 +1,53 @@
 'use client'
 
+import { useState, FormEvent } from 'react'
+
 export default function Home() {
+  const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState('')
+
+  const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID || ''
+  const FALLBACK_EMAIL = 'waitlist@zipayo.de'
+
+  const handleWaitlistSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    setError('')
+    
+    if (!email || !email.includes('@')) {
+      setError('Bitte geben Sie eine gültige E-Mail-Adresse ein.')
+      return
+    }
+
+    setIsSubmitting(true)
+
+    // If Formspree ID is configured, use it
+    if (FORMSPREE_ID) {
+      try {
+        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'zipayo-landing-waitlist' })
+        })
+        if (res.ok) {
+          setIsSubmitted(true)
+          setEmail('')
+        } else {
+          setError('Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.')
+        }
+      } catch {
+        setError('Netzwerkfehler. Bitte versuchen Sie es erneut.')
+      }
+    } else {
+      // Fallback: open mailto link
+      window.location.href = `mailto:${FALLBACK_EMAIL}?subject=Zipayo Waitlist&body=Bitte fügen Sie mich zur Zipayo Waitlist hinzu: ${encodeURIComponent(email)}`
+      setIsSubmitted(true)
+      setEmail('')
+    }
+
+    setIsSubmitting(false)
+  }
   return (
     <div className="bg-surface-bright font-body text-on-surface">
 
@@ -294,12 +341,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* Final CTA + Waitlist */}
       <section className="py-24 bg-inverse-surface text-inverse-on-surface">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-black font-headline tracking-tighter mb-8 leading-tight">Bereit für die Zukunft des Bezahlens?</h2>
           <p className="text-xl text-surface-variant/70 mb-12 max-w-2xl mx-auto">Starten Sie noch heute mit Zipayo und bieten Sie Ihren Kunden ein modernes Bezahlerlebnis ohne Kompromisse.</p>
-          <button className="bg-primary-container text-on-primary-container px-10 py-5 rounded-full font-black text-xl hover:scale-105 transition-all shadow-2xl">Kostenlos ausprobieren</button>
+          
+          {/* Waitlist Form */}
+          <div className="max-w-xl mx-auto">
+            {isSubmitted ? (
+              <div className="bg-primary-container/20 p-8 rounded-2xl">
+                <span className="material-symbols-outlined text-5xl text-primary-container mb-4" style={{fontVariationSettings: "'FILL' 1"}}>check_circle</span>
+                <h3 className="text-2xl font-bold mb-2">Willkommen auf der Waitlist!</h3>
+                <p className="text-surface-variant/70">Wir melden uns, sobald Zipayo für Sie bereit ist.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                <div className="relative w-full sm:w-auto sm:flex-1 max-w-md">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Ihre E-Mail-Adresse"
+                    className="w-full px-6 py-4 rounded-full text-on-surface bg-surface-container-lowest border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full sm:w-auto bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-black text-lg hover:scale-105 transition-all shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <span className="material-symbols-outlined animate-spin">sync</span>
+                      Wird gesendet...
+                    </>
+                  ) : (
+                    <>
+                      <span className="material-symbols-outlined">rocket_launch</span>
+                      Auf die Waitlist
+                    </>
+                  )}
+                </button>
+              </form>
+            )}
+            {error && (
+              <p className="mt-4 text-red-400 text-sm">{error}</p>
+            )}
+            <p className="mt-6 text-sm text-surface-variant/50">Kein Spam. Nur Updates zum Launch.</p>
+          </div>
         </div>
       </section>
 
