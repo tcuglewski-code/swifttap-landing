@@ -288,55 +288,57 @@ export default function Home() {
       <section className="py-24 bg-surface-container">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black font-headline tracking-tight mb-4">Einfache Preisgestaltung</h2>
-            <p className="text-secondary text-lg">Wählen Sie den passenden Plan für Ihr Unternehmen.</p>
+            <h2 className="text-4xl font-black font-headline tracking-tight mb-4">Transparente Preise</h2>
+            <p className="text-secondary text-lg">Kein verstecktes Kleingedrucktes. Keine Überraschungen.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Starter */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {/* QR Basic */}
             <div className="bg-surface-container-low p-10 rounded-2xl border border-outline-variant/10 flex flex-col">
-              <div className="mb-10">
-                <h3 className="text-xl font-bold mb-2">Starter</h3>
-                <p className="text-secondary text-sm">Ideal für Einsteiger</p>
+              <div className="mb-8">
+                <h3 className="text-xl font-bold mb-1">QR Basic</h3>
+                <p className="text-secondary text-sm">Smartphone genügt — keine Hardware nötig</p>
               </div>
-              <div className="text-4xl font-black mb-10">0€ <span className="text-lg font-normal text-secondary">/ Monat</span></div>
-              <ul className="space-y-4 mb-10 flex-grow">
-                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Bis zu 1.000€ Umsatz</span></li>
-                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Standard Support</span></li>
-                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Alle Basis-Features</span></li>
-              </ul>
-              <button className="w-full border border-outline text-on-surface py-3 rounded-full font-bold hover:bg-white transition-all">Plan wählen</button>
-            </div>
-            {/* Pro */}
-            <div className="bg-surface-container-lowest p-10 rounded-2xl editorial-shadow border border-primary/20 flex flex-col relative md:-translate-y-4">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase">Beliebt</div>
-              <div className="mb-10">
-                <h3 className="text-xl font-bold mb-2">Pro</h3>
-                <p className="text-secondary text-sm">Für wachsende Teams</p>
+              <div className="mb-2">
+                <span className="text-4xl font-black">19€</span>
+                <span className="text-lg font-normal text-secondary"> / Monat</span>
               </div>
-              <div className="text-4xl font-black mb-10">29€ <span className="text-lg font-normal text-secondary">/ Monat</span></div>
-              <ul className="space-y-4 mb-10 flex-grow">
+              <p className="text-secondary text-sm mb-8">+ 1,5 % pro Zahlung</p>
+              <ul className="space-y-3 mb-10 flex-grow">
+                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>QR-Code & Link-Zahlung</span></li>
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Unbegrenzter Umsatz</span></li>
-                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Priorisierter Support</span></li>
-                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Erweiterte Statistiken</span></li>
+                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Echtzeit-Dashboard</span></li>
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Individuelle QR-Branding</span></li>
+                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>E-Mail-Support</span></li>
+              </ul>
+              <button className="w-full border border-outline text-on-surface py-3 rounded-full font-bold hover:bg-white transition-all">Kostenlos starten</button>
+            </div>
+            {/* Terminal Pro */}
+            <div className="bg-surface-container-lowest p-10 rounded-2xl editorial-shadow border border-primary/20 flex flex-col relative">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase">Empfohlen</div>
+              <div className="mb-8">
+                <h3 className="text-xl font-bold mb-1">Terminal Pro</h3>
+                <p className="text-secondary text-sm">Inkl. Kartenlesegerät — alles aus einer Hand</p>
+              </div>
+              <div className="mb-2">
+                <span className="text-4xl font-black">39€</span>
+                <span className="text-lg font-normal text-secondary"> / Monat</span>
+              </div>
+              <p className="text-secondary text-sm mb-8">+ 1,65 % pro Zahlung · Terminal inklusive</p>
+              <ul className="space-y-3 mb-10 flex-grow">
+                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Alles aus QR Basic</span></li>
+                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>NFC / Tap-to-Pay Terminal</span></li>
+                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Delayed Capture (Vorautorisation)</span></li>
+                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Erweiterte Statistiken & Export</span></li>
+                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Priorisierter Support</span></li>
               </ul>
               <button className="w-full bg-primary text-on-primary py-3 rounded-full font-bold hover:opacity-90 transition-all shadow-md">Jetzt starten</button>
             </div>
-            {/* Business */}
-            <div className="bg-surface-container-low p-10 rounded-2xl border border-outline-variant/10 flex flex-col">
-              <div className="mb-10">
-                <h3 className="text-xl font-bold mb-2">Business</h3>
-                <p className="text-secondary text-sm">Enterprise Lösungen</p>
-              </div>
-              <div className="text-4xl font-black mb-10">99€ <span className="text-lg font-normal text-secondary">/ Monat</span></div>
-              <ul className="space-y-4 mb-10 flex-grow">
-                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Multi-Account Management</span></li>
-                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>24/7 VIP Support</span></li>
-                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>API & Webhook Support</span></li>
-                <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-xl">check_circle</span><span>Maßgeschneiderte Gebühren</span></li>
-              </ul>
-              <button className="w-full border border-outline text-on-surface py-3 rounded-full font-bold hover:bg-white transition-all">Kontakt aufnehmen</button>
-            </div>
+          </div>
+          {/* Vergleich mit Wettbewerbern */}
+          <div className="text-center mt-12">
+            <p className="text-secondary text-sm">
+              Ab 10.000 € Monatsumsatz günstiger als SumUp &amp; Zettle. <a href="#" className="text-primary font-semibold hover:underline">Kostenvergleich ansehen →</a>
+            </p>
           </div>
         </div>
       </section>
