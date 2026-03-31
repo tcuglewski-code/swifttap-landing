@@ -34,7 +34,7 @@ export default function Home() {
           <div className="relative">
             <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary-fixed-dim/20 blur-[100px] rounded-full"></div>
             <div className="relative bg-surface-container-lowest p-4 rounded-[2rem] editorial-shadow lg:rotate-3 border border-outline-variant/10">
-              <img className="rounded-[1.5rem] w-full h-auto object-cover aspect-[4/5]" src="/images/hero-phone.png" alt="Zipayo Payment App"/>
+              <img className="rounded-[1.5rem] w-full h-auto object-cover aspect-[4/5]" src="/images/hero-phone.png" alt="Modern contactless payment — tap to pay"/>
             </div>
           </div>
         </div>
