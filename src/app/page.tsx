@@ -80,6 +80,105 @@ export default function Home() {
         </div>
       </section>
 
+      {/* So funktioniert's — Delayed Capture */}
+      <section className="py-24 bg-surface-container-lowest">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-black font-headline tracking-tight mb-4">So funktioniert's</h2>
+            <p className="text-secondary text-lg max-w-2xl mx-auto">Autorisierung beim Einchecken — Abbuchung erst nach dem Service. Perfekt für Dienstleister.</p>
+            <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mt-6"></div>
+          </div>
+          
+          {/* 3-Step Flow */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* Step 1 */}
+            <div className="relative">
+              <div className="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 h-full">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary font-black text-xl mb-6">1</div>
+                <h3 className="text-xl font-bold mb-3 font-headline">Check-in & Autorisierung</h3>
+                <p className="text-secondary leading-relaxed">Ihr Kunde scannt den QR-Code oder tippt "Bezahlen". Der Betrag wird <strong>nur autorisiert</strong> — noch keine Abbuchung.</p>
+                <div className="mt-6 flex items-center gap-2 text-sm text-primary font-semibold">
+                  <span className="material-symbols-outlined text-lg">lock</span>
+                  Betrag reserviert
+                </div>
+              </div>
+              <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                <span className="material-symbols-outlined text-3xl text-outline-variant">arrow_forward</span>
+              </div>
+            </div>
+            
+            {/* Step 2 */}
+            <div className="relative">
+              <div className="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 h-full">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary font-black text-xl mb-6">2</div>
+                <h3 className="text-xl font-bold mb-3 font-headline">Service erbringen</h3>
+                <p className="text-secondary leading-relaxed">Führen Sie Ihre Dienstleistung in Ruhe durch. Ob Reparatur, Beratung oder Außendienst — der Kunde hat bereits "eingecheckt".</p>
+                <div className="mt-6 flex items-center gap-2 text-sm text-secondary font-semibold">
+                  <span className="material-symbols-outlined text-lg">engineering</span>
+                  Arbeit läuft...
+                </div>
+              </div>
+              <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                <span className="material-symbols-outlined text-3xl text-outline-variant">arrow_forward</span>
+              </div>
+            </div>
+            
+            {/* Step 3 */}
+            <div className="relative">
+              <div className="bg-surface-container p-8 rounded-2xl border border-primary/30 h-full">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary font-black text-xl mb-6">3</div>
+                <h3 className="text-xl font-bold mb-3 font-headline">Checkout & Abbuchung</h3>
+                <p className="text-secondary leading-relaxed">Nach Abschluss lösen Sie die Zahlung aus. Der finale Betrag kann auch <strong>niedriger</strong> sein als autorisiert — flexibel für Kostenvoranschläge.</p>
+                <div className="mt-6 flex items-center gap-2 text-sm text-primary font-semibold">
+                  <span className="material-symbols-outlined text-lg" style={{fontVariationSettings: "'FILL' 1"}}>check_circle</span>
+                  Bezahlt!
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Benefits Box */}
+          <div className="bg-inverse-surface text-inverse-on-surface p-8 md:p-12 rounded-3xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-black font-headline mb-4">Warum Delayed Capture?</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary-container mt-0.5">verified</span>
+                    <span><strong>Vertrauen:</strong> Kunden zahlen erst nach erbrachter Leistung</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary-container mt-0.5">payments</span>
+                    <span><strong>Flexibilität:</strong> Finaler Betrag anpassbar (Kostenvoranschlag → Endpreis)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary-container mt-0.5">shield</span>
+                    <span><strong>Weniger Disputes:</strong> Keine Rückbuchungen wegen "nicht erbrachter Leistung"</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary-container mt-0.5">timer</span>
+                    <span><strong>7 Tage Zeit:</strong> Autorisierung bleibt bis zu 7 Tage gültig</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex justify-center">
+                <div className="bg-surface-container-lowest text-on-surface p-6 rounded-2xl max-w-xs text-center">
+                  <div className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Ideal für</div>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    <span className="bg-primary-fixed-dim/20 text-primary px-3 py-1 rounded-full text-sm font-medium">Handwerker</span>
+                    <span className="bg-primary-fixed-dim/20 text-primary px-3 py-1 rounded-full text-sm font-medium">Außendienst</span>
+                    <span className="bg-primary-fixed-dim/20 text-primary px-3 py-1 rounded-full text-sm font-medium">Werkstätten</span>
+                    <span className="bg-primary-fixed-dim/20 text-primary px-3 py-1 rounded-full text-sm font-medium">Hotels</span>
+                    <span className="bg-primary-fixed-dim/20 text-primary px-3 py-1 rounded-full text-sm font-medium">Events</span>
+                    <span className="bg-primary-fixed-dim/20 text-primary px-3 py-1 rounded-full text-sm font-medium">Beratung</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Warum Zipayo? */}
       <section className="py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
