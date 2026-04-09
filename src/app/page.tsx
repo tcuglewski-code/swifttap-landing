@@ -633,7 +633,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-slate-500 text-sm">© 2025 Zipayo. All rights reserved.</p>
+            <p className="text-slate-500 text-sm">© 2026 Zipayo. All rights reserved.</p>
           </div>
         </div>
       </footer>
