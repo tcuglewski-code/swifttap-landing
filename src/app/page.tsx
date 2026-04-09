@@ -226,6 +226,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Demo ausprobieren */}
+      <section className="py-24 bg-surface-container">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-black font-headline tracking-tight mb-4">Demo ausprobieren</h2>
+            <p className="text-secondary text-lg max-w-2xl mx-auto">Erleben Sie den Zipayo-Zahlungsflow in 3 einfachen Schritten.</p>
+            <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mt-6"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* Step 1 */}
+            <div className="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 text-center">
+              <div className="w-16 h-16 bg-primary-fixed-dim/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="material-symbols-outlined text-primary text-4xl">qr_code_2</span>
+              </div>
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-on-primary font-black text-sm mx-auto mb-4">1</div>
+              <h3 className="text-lg font-bold mb-2 font-headline">QR-Code generieren</h3>
+              <p className="text-secondary text-sm leading-relaxed">Erstellen Sie einen Zahlungs-QR-Code mit dem gewünschten Betrag in Sekunden.</p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 text-center">
+              <div className="w-16 h-16 bg-primary-fixed-dim/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="material-symbols-outlined text-primary text-4xl">phone_iphone</span>
+              </div>
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-on-primary font-black text-sm mx-auto mb-4">2</div>
+              <h3 className="text-lg font-bold mb-2 font-headline">Kunde scannt</h3>
+              <p className="text-secondary text-sm leading-relaxed">Ihr Kunde scannt den Code mit dem Smartphone und bezahlt sicher via Stripe.</p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 text-center">
+              <div className="w-16 h-16 bg-primary-fixed-dim/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="material-symbols-outlined text-primary text-4xl" style={{fontVariationSettings: "'FILL' 1"}}>check_circle</span>
+              </div>
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-on-primary font-black text-sm mx-auto mb-4">3</div>
+              <h3 className="text-lg font-bold mb-2 font-headline">Geld eingang</h3>
+              <p className="text-secondary text-sm leading-relaxed">Die Zahlung wird sofort bestätigt und landet direkt auf Ihrem Stripe-Konto.</p>
+            </div>
+          </div>
+
+          {/* Demo QR Mock */}
+          <div className="bg-surface-container-lowest p-10 rounded-3xl editorial-shadow border border-outline-variant/10 max-w-md mx-auto text-center">
+            <h4 className="text-sm font-bold text-primary tracking-widest uppercase mb-4">Demo-Zahlung</h4>
+            <div className="bg-surface-container-low p-6 rounded-2xl mb-6 inline-block">
+              <span className="material-symbols-outlined text-8xl text-on-surface-variant">qr_code_2</span>
+            </div>
+            <p className="text-3xl font-black mb-2">€ 5,00</p>
+            <p className="text-secondary text-sm mb-8">Demo-Betrag — keine echte Abbuchung</p>
+            <a href="/register" className="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg hover:-translate-y-0.5 transition-all inline-block">
+              Jetzt kostenlos starten
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Warum Zipayo? */}
       <section className="py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
