@@ -131,7 +131,7 @@ export default function Home() {
       <section className="py-24 bg-surface-container-lowest">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black font-headline tracking-tight mb-4">So funktioniert's</h2>
+            <h2 className="text-3xl md:text-4xl font-black font-headline tracking-tight mb-4">So funktioniert&apos;s</h2>
             <p className="text-secondary text-lg max-w-2xl mx-auto">Autorisierung beim Einchecken — Abbuchung erst nach dem Service. Perfekt für Dienstleister.</p>
             <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mt-6"></div>
           </div>
@@ -143,7 +143,7 @@ export default function Home() {
               <div className="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 h-full">
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary font-black text-xl mb-6">1</div>
                 <h3 className="text-xl font-bold mb-3 font-headline">Check-in & Autorisierung</h3>
-                <p className="text-secondary leading-relaxed">Ihr Kunde scannt den QR-Code oder tippt "Bezahlen". Der Betrag wird <strong>nur autorisiert</strong> — noch keine Abbuchung.</p>
+                <p className="text-secondary leading-relaxed">Ihr Kunde scannt den QR-Code oder tippt &quot;Bezahlen&quot;. Der Betrag wird <strong>nur autorisiert</strong> — noch keine Abbuchung.</p>
                 <div className="mt-6 flex items-center gap-2 text-sm text-primary font-semibold">
                   <span className="material-symbols-outlined text-lg">lock</span>
                   Betrag reserviert
@@ -159,7 +159,7 @@ export default function Home() {
               <div className="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 h-full">
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary font-black text-xl mb-6">2</div>
                 <h3 className="text-xl font-bold mb-3 font-headline">Service erbringen</h3>
-                <p className="text-secondary leading-relaxed">Führen Sie Ihre Dienstleistung in Ruhe durch. Ob Reparatur, Beratung oder Außendienst — der Kunde hat bereits "eingecheckt".</p>
+                <p className="text-secondary leading-relaxed">Führen Sie Ihre Dienstleistung in Ruhe durch. Ob Reparatur, Beratung oder Außendienst — der Kunde hat bereits &quot;eingecheckt&quot;.</p>
                 <div className="mt-6 flex items-center gap-2 text-sm text-secondary font-semibold">
                   <span className="material-symbols-outlined text-lg">engineering</span>
                   Arbeit läuft...
@@ -200,7 +200,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary-container mt-0.5">shield</span>
-                    <span><strong>Weniger Disputes:</strong> Keine Rückbuchungen wegen "nicht erbrachter Leistung"</span>
+                    <span><strong>Weniger Disputes:</strong> Keine Rückbuchungen wegen &quot;nicht erbrachter Leistung&quot;</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary-container mt-0.5">timer</span>
